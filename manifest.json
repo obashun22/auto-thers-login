@@ -1,25 +1,23 @@
 {
-	"name": "Auto CAS Login",
-	"manifest_version": 3,
-	"version": "1.0",
-  "description": "Auto login extention for CAS of nagoya university.",
+  "name": "Auto Thers Login",
+  "manifest_version": 3,
+  "version": "1.0",
+  "description": "Auto login extention for Thers.",
   "icons": {
     "48": "icon64.png"
   },
-	"permissions": [
-    "tabs", "storage"
-  ],
-	"content_scripts": [
+  "permissions": ["tabs"],
+  "content_scripts": [
     {
-        "matches": [
-          "https://auth.nagoya-u.ac.jp/cas/login*",
-          "https://ct.nagoya-u.ac.jp/portal*"
-        ],
-        "js": ["jquery-3.6.0.min.js", "autoLogin.js"]
+      "matches": [
+        "https://shib.sys.thers.ac.jp/idp/profile/SAML2/Redirect/SSO*",
+        "https://tact.ac.thers.ac.jp/portal*"
+      ],
+      "js": ["jquery-3.6.0.min.js", "autoLogin.js"]
     }
   ],
-  "action":{
-    "default_title":"Auto CAS Login",
-    "default_popup":"popup.html"
+  "action": {
+    "default_title": "Auto Thers Login",
+    "default_popup": "popup.html"
   }
 }

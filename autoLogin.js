@@ -1,22 +1,20 @@
 $(() => {
-  // 未ログインのNUCTにログインした場合の処理
-  if (location.href.match(/https:\/\/ct.nagoya-u.ac.jp\/portal/)) {
-    if ($('#loginLinks').find('img').length) {
-      // CASにリダイレクト
-      location.href = "https://auth.nagoya-u.ac.jp/cas/login?service=https%3A%2F%2Fct.nagoya-u.ac.jp%2Fsakai-login-tool%2Fcontainer";
+  // 未ログインのページにログインした場合の処理
+  if (location.href.match(/https:\/\/tact.ac.thers.ac.jp\/portal/)) {
+    if ($("#loginLink1").find("img").length > 0) {
+      const href = $("#loginLink1").attr("href");
+      location.href = href;
     }
   }
-  // CAS認証ページの場合の処理
-  if (location.href.match(/https:\/\/auth.nagoya-u.ac.jp\/cas\/login/)) {
-    chrome.storage.local.get('acl_username', ({ acl_username = "" }) => {
-      const username = acl_username;
-      $('#username').val(username);
-      chrome.storage.local.get('acl_password', ({ acl_password = "" }) => {
-        const password = acl_password;
-        $('#password').val(password);
-        // ログインボタン押下
-        $('input[name=submit]').click();
-      })
-    })
+  // 認証ページの場合の処理
+  if (
+    location.href.match(
+      /https:\/\/shib.sys.thers.ac.jp\/idp\/profile\/SAML2\/Redirect\/SSO/
+    )
+  ) {
+    // チェックボックス選択
+    $("#_shib_idp_globalConsent").click();
+    // 同意押下
+    $("input[name=_eventId_proceed]").click();
   }
 });

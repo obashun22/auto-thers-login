@@ -1,19 +1,18 @@
-# Auto CAS Login
+# Auto Thers Login
+
 ## なにこれ
-CAS認証のログインを自動化するChrome拡張。名古屋大学が提供するCASのみに対応。  
-※NUCTの自動ログイン機能も追加しました！
+
+Thers のログインを自動化する Chrome 拡張。東海国立大学機構が提供する SAML 認証に対応。岐阜大学は動くかもしれないし動かないかもしれません。
 
 ## 使い方
-`Auto CAS Login`に予めログイン情報を設定しておくことでCAS認証をログイン操作無しで自動でログインできる。  
-厳密にはログイン情報の入力とログインボタンの押下を自動化している。
-1. Chromeのウィンドウ右上にある拡張の一覧タブから`Auto CAS Login`を開く
-1. ポップアップ上の入力欄から名大IDとパスワードを設定する
-1. CAS認証ページを開くと自動でログインしてくれる
+
+当 Chrome 拡張を導入しておくことで自動でログインできる。
+**同意画面が表示される際の操作を自動化している**ので、一度ログインしている必要がある。
 
 ## 導入
-1. リポジトリをクローン  
-`git clone https://github.com/obashun22/auto-cas-login.git`
 
-1. Chromeの拡張機能(`chrome://extensions/`)を開く
+1. リポジトリをクローン  
+   `git clone https://github.com/obashun22/auto-thers-login.git`
+1. Chrome の拡張機能(`chrome://extensions/`)を開く
 1. デベロッパーモードに切り替える
 1. `パッケージ化されていない拡張機能を読み込む`から先にクローンしたリポジトリを選択する
